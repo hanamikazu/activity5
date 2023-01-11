@@ -30,11 +30,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _showOptionsDialog(BuildContext context){
     return showDialog(context: context, builder: (BuildContext context){
       return AlertDialog(
+<<<<<<< HEAD
         title: const Text('Choose From: ', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),),
+=======
+        title: const Text('Choose From: '),
+>>>>>>> 93e539a1f2d338a90a7b8f5de13578f0807a99fa
         content: SingleChildScrollView(
           child: ListBody(
             children: [
               GestureDetector(
+<<<<<<< HEAD
                   child: const Text("Gallery", style: TextStyle(fontSize: 18),),
                   onTap: () async {
                     if (await Permission.storage.request().isGranted){
@@ -64,6 +69,23 @@ class _HomeScreenState extends State<HomeScreen> {
               }, child: const Text("Okay",
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),))
           ]
+=======
+                child: const Text("Gallery", style: TextStyle(fontSize: 18),),
+                onTap: (){
+                  chooseFrom(ImageSource.gallery);
+                }
+              ),
+              const Padding(padding: EdgeInsets.all(10)),
+              GestureDetector(
+                child: const Text("Camera", style: TextStyle(fontSize: 18)),
+                onTap: (){
+                  chooseFrom(ImageSource.camera);
+                }
+              )
+            ],
+          ),
+        ),
+>>>>>>> 93e539a1f2d338a90a7b8f5de13578f0807a99fa
       );
     });
   }
@@ -75,6 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text("Activity 5 - Martinito"),
         leading: const Icon(Icons.person),
       ),
+<<<<<<< HEAD
       body: DecoratedBox(decoration: const BoxDecoration(
         image: DecorationImage(
         image: AssetImage("assets/xiao.jpg"), fit: BoxFit.cover)
@@ -85,6 +108,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.teal,
                 margin: const EdgeInsets.all(20),
                 padding: const EdgeInsets.all(30), alignment: Alignment.center,
+=======
+      body: Column(
+        children: [
+          Container(
+            color: Colors.teal,
+            margin: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(30),
+              alignment: Alignment.center,
+>>>>>>> 93e539a1f2d338a90a7b8f5de13578f0807a99fa
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -94,6 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: 200,
                           fit: BoxFit.cover,))
                         : const FlutterLogo(size: 200),
+<<<<<<< HEAD
                     const SizedBox(height: 30,),
                     ElevatedButton(onPressed: (){
                       _showOptionsDialog(context);
@@ -161,5 +194,24 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       ));
+=======
+                    ElevatedButton(onPressed: (){
+                      _showOptionsDialog(context);
+                      },style: ElevatedButton.styleFrom(backgroundColor: Colors.black54),
+                        child: const Text("Choose Image", style: TextStyle(fontSize: 20),))
+                  ],
+                )
+            ),
+          Container(
+            padding: const EdgeInsets.only(left: 20, top: 5, right: 20),
+            child: const Text("ALATUS",
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),),
+          ),
+          const Text("Conqueror of Demons",
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),),
+        ],
+      ),
+    );
+>>>>>>> 93e539a1f2d338a90a7b8f5de13578f0807a99fa
   }
 }
